@@ -13,22 +13,21 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Our Agenda Today
 
-> **Part 1: Understanding Visuals**
+**Part 1: Understanding Visuals**
 <font size="4">  
-
-* Maps:
-    + Worldwide COVID-19 growth in a static map
-    + Worldwide COVID-19 growth in a dynamic map  
       
 * Line graph:
     + Top 10 Cases by Country
-    + Forecasting future cases
     + Impact on Hollywood
     + Impact on restaurant outings
     
+* Maps:
+    + Worldwide COVID-19 growth in a static map
+    + Worldwide COVID-19 growth in a dynamic map  
+    
 </font>
 
-> **Part 2: Exercises**  
+**Part 2: Exercises**  
 <font size="4">  
 
 1. Map: Worldwide COVID-19 growth in a static map
@@ -38,7 +37,7 @@ knitr::opts_chunk$set(echo = FALSE)
 </font>
 
 
-## Slide with Bullets
+## Line graphs
 
 - Bullet 1
 - Bullet 2

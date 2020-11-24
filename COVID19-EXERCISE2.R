@@ -1,3 +1,11 @@
+# Install R package developed by Dr. Guangchuang Yu
+#from Southern Medical University.
+#This package allows us to access the latest data
+#and historical data of cases of all countries, plot
+#data on a map, and create various graphs
+
+remotes::install_github("GuangchuangYu/nCov2019")
+
 library(nCov2019)
 get_nCov2019()
 load_nCov2019()
@@ -5,12 +13,19 @@ load_nCov2019()
 require(nCov2019)
 require(dplyr)
 
+# get a first impression of the dataset
+# assign x and y
+
 x <- get_nCov2019()
 y <- load_nCov2019()
 
+# check results for x
 x
+
+# check results for y
 y
 
+# view worldwide data
 x['global']
 
 # obtain top 10 country
@@ -30,11 +45,22 @@ ggplot(filter(d, country %in% n$country, d$time > '2020-02-01'),
       function(d) d[d$time == time(y),])
 
 # worldwide growth on a map
+# create a global map using the data
+install.packages("maps")
+require(nCov2019)
+require(dplyr)
 x <- get_nCov2019()
+
+# check function
 x
+
+# plot x on a graph
 plot(x)
 
 # visualize global growth overtime
+# library(magick) -> if the package is not installed
+# then execute below code
+install.packages("magick")
 
 library(magick)
 require(nCov2019)

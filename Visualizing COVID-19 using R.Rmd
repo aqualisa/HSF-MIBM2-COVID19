@@ -1,7 +1,7 @@
 ---
-title: "Visualizing COVID-19 using R"
+title: 'Part C: Visualizing COVID-19'
 author: "Alisa Ishikawa"
-date: "11/24/2020"
+date: "January 5, 2020"
 output:
   ioslides_presentation: default
   beamer_presentation: default
@@ -11,47 +11,166 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## Our Agenda Today
+## Generic Plot() Function 
 
-**Part 1: Understanding Visuals**
-<font size="4">  
-      
-* Line graph:
-    + Top 10 Cases by Country
-    + Impact on Hollywood
-    + Impact on restaurant outings
-    
-* Maps:
-    + Worldwide COVID-19 growth in a static map
-    + Worldwide COVID-19 growth in a dynamic map  
-    
-</font>
+- Basic function in R
+- 2D format
+- Correlation
+- Scatter plots and line graphs  
+  
+<br/>
+The generic syntax for the Plot function is:
 
-**Part 2: Exercises**  
-<font size="4">  
+**Plot(x,y...)**
 
-1. Map: Worldwide COVID-19 growth in a static map
-2. Map: Worldwide COVID-19 growth in a dynamic map
-3. Line Graph: Top 10 Cases by Country
+## Advanced Plot() Function
 
-</font>
+Advanced Plot function syntax is:
 
+**plot(x, y, type, main, sub,  xlab, ylab)**
 
-## Line graphs
+where...  
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+“**p**”: points  
+“**l**”: lines   
+“**b**”: both point and lines in a single place  
+“**c**”: join empty point by the lines  
+“**o**”: both lines and over-plotted point  
+“**h**”: histogram 
+“**s**”: stair steps  
+“**n**”: no plotting  
+  
+“**xlab**”: x-axis legends  
+“**ylab**”: y-axis legends  
 
-## Slide with R Output
+## Example Exercise
 
-```{r cars, echo = TRUE}
-summary(cars)
+Exam grades of 10 students in two courses, X and Y, respectively  
+<br/>
+<br/>
+X = 40, 15, 50, 12, 22, 29, 21, 35, 14, 15  
+Y = 41, 42, 32, 14, 42, 27, 13, 50, 33, 22
+
+## Exercise 1: Define X and plot as lines plot
+
+```{r plot, echo = TRUE, out.width="80%"}
+X = c(40, 15, 50, 12, 22, 29, 21, 35, 14, 15)
+plot(X ,type = "l")
+```  
+
+## Exercise 2: Define Y and plot as points plot
+
+```{r plot2, echo = TRUE, out.width="80%"}
+Y = c(41, 42, 32, 14, 42, 27, 13, 50, 33, 22)
+plot(Y ,type = "p")
+```  
+
+## Plot() Function Capabilities
+
+![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/plot function other examples.png){width=100%}
+
+## ggplots() package
+
+```r{}
+# The easiest way to get ggplot2 is to install the whole tidyverse:
+install.packages("tidyverse")
+
+# Alternatively, install just ggplot2:
+install.packages("ggplot2")
+
+# Or the development version from GitHub:
+# install.packages("devtools")
+devtools::install_github("tidyverse/ggplot2")
 ```
 
-## Slide with Plot
+## ggplot() capabilities
 
-```{r pressure}
-plot(pressure)
+![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot other 1.png){width=65%}  
+![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot other 2.png){width=65%}  
+![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot other 3.png){width=50%}
+
+## Case Study
+
+Package: nCov2019  
+By: Dr. Guangchuang Yu (Southern Medical University)  
+<br/>
+Install and load package  
+
+```r{}
+remotes::install_github("GuangchuangYu/nCov2019")  
+  
+library(nCov2019)  
+get_nCov2019()  
+load_nCov2019()  
+
+```
+## 1st Impression of dataset
+
+Assign x and y  
+
+```r{}
+x <- get_nCov2019()
+y <- load_nCov2019()
 ```
 
+Check results for x and y  
+
+```r{}
+x
+```
+```
+China (total confirmed cases): 95901
+last update: 2020-12-21 20:45:32
+```
+```r{}
+y
+```
+```
+nCov2019 historical data 
+last update: 2020-11-26 
+```
+
+## Impression of worldwide data
+
+```r{}
+x['global']
+```
+```
+    name           confirm   suspect dead    deadRate  showRate  heal
+1   China          95901      7      4771    4.97      FALSE     89480
+2   United States  18277433   0      324898  1.78      FALSE     10622096
+3   India          10055560   0      145810  1.45      FALSE     9606111
+4   Brazil         7238600    0      186764  2.58      FALSE     6409986
+5   Russia         2850042    0      50723   1.78      FALSE     2273510
+6   France         2529756    0      60665   2.4       FALSE     189638
+7   United Kingdom 2079564    0      67718   3.26      FALSE     4380
+8   Turkey         2043704    0      18351   0.9       FALSE     1834705
+9   Italy          1964054    0      69214   3.52      FALSE     1281258
+10  Spain          1817448    0      48926   2.69      FALSE     196958
+11  Argentina      1541285    0      41813   2.71      FALSE     1368346
+12  Germany         1531998   0      26655   1.74      FALSE     1129280
+```
+
+## Visualize with line graph using ggplot
+
+Using ggplot2, we can see the growth of confirmed cases  
+![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/Top 10 graph.png){width=80%}
+
+## Visualize a static map with plot()
+
+Package: maps
+
+```r{}
+install.packages("maps")  
+  
+require(nCov2019)
+require(dplyr)
+x <- get_nCov2019()
+```
+## Visualize a static map with plot()
+
+```r{}
+# we assigned x <- get_nCov2019(), so now we plot them
+plot(x)
+```
+![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/Static Map 21.12.png){width=100%}

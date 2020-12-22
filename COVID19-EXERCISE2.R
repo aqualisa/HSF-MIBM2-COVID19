@@ -79,3 +79,4 @@ dev.off()
 animation <- image_animate(img, fps=2)
 print(animation)
 
+

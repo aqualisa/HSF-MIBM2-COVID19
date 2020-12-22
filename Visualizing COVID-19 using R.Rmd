@@ -2,9 +2,8 @@
 title: 'Part C: Visualizing COVID-19'
 author: "Alisa Ishikawa"
 date: "January 5, 2020"
-output:
-  ioslides_presentation: default
-  beamer_presentation: default
+output: 
+    slidy_presentation: default
 ---
 
 ```{r setup, include=FALSE}
@@ -24,10 +23,10 @@ The generic syntax for the Plot function is:
 **Plot(x,y...)**
 
 ## Advanced Plot() Function
-
+  
 Advanced Plot function syntax is:
 
-**plot(x, y, type, main, sub,  xlab, ylab)**
+> **plot(x, y, type, main, sub,  xlab, ylab)**
 
 where...  
 
@@ -48,8 +47,9 @@ where...
 Exam grades of 10 students in two courses, X and Y, respectively  
 <br/>
 <br/>
-X = 40, 15, 50, 12, 22, 29, 21, 35, 14, 15  
-Y = 41, 42, 32, 14, 42, 27, 13, 50, 33, 22
+
+> X = 40, 15, 50, 12, 22, 29, 21, 35, 14, 15  
+> Y = 41, 42, 32, 14, 42, 27, 13, 50, 33, 22
 
 ## Exercise 1: Define X and plot as lines plot
 
@@ -69,68 +69,46 @@ plot(Y ,type = "p")
 
 ![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/plot function other examples.png){width=100%}
 
-## ggplots() package
+## Alternative Visulization Tools: ggplots()
 
 ```r{}
-# The easiest way to get ggplot2 is to install the whole tidyverse:
-install.packages("tidyverse")
-
-# Alternatively, install just ggplot2:
 install.packages("ggplot2")
-
-# Or the development version from GitHub:
-# install.packages("devtools")
-devtools::install_github("tidyverse/ggplot2")
 ```
-
-## ggplot() capabilities
-
 ![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot other 1.png){width=65%}  
 ![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot other 2.png){width=65%}  
 ![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot other 3.png){width=50%}
 
-## Case Study
+## Case Study: Visualization of COVID-19
 
 Package: nCov2019  
 By: Dr. Guangchuang Yu (Southern Medical University)  
-<br/>
-Install and load package  
 
 ```r{}
 remotes::install_github("GuangchuangYu/nCov2019")  
-  
-library(nCov2019)  
-get_nCov2019()  
-load_nCov2019()  
-
 ```
-## 1st Impression of dataset
+### Explore 1st Impression of dataset
 
 Assign x and y  
-
 ```r{}
 x <- get_nCov2019()
 y <- load_nCov2019()
 ```
 
 Check results for x and y  
-
 ```r{}
 x
-```
-```
+  
 China (total confirmed cases): 95901
 last update: 2020-12-21 20:45:32
 ```
 ```r{}
 y
-```
-```
+  
 nCov2019 historical data 
 last update: 2020-11-26 
 ```
 
-## Impression of worldwide data
+## Summary of worldwide data {.smaller}
 
 ```r{}
 x['global']
@@ -151,26 +129,20 @@ x['global']
 12  Germany         1531998   0      26655   1.74      FALSE     1129280
 ```
 
-## Visualize with line graph using ggplot
+## Visualize with line graph using ggplot()
 
-Using ggplot2, we can see the growth of confirmed cases  
 ![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/Top 10 graph.png){width=80%}
 
 ## Visualize a static map with plot()
 
-Package: maps
-
 ```r{}
 install.packages("maps")  
-  
-require(nCov2019)
-require(dplyr)
-x <- get_nCov2019()
-```
-## Visualize a static map with plot()
+```  
+![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/Static Map 21.12.png){width=100%}
+
+## Bonus: Visualize a moving map with magick()
 
 ```r{}
-# we assigned x <- get_nCov2019(), so now we plot them
-plot(x)
-```
-![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/Static Map 21.12.png){width=100%}
+install.packages("magick")  
+```  
+![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/moving map.gif){width=100%}

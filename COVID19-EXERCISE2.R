@@ -67,7 +67,6 @@ require(nCov2019)
 x <- get_nCov2019()
 y <- load_nCov2019()
 
-y <- load_nCov2019()
 d <- c(paste0("2020-02-", 1:29), paste0("2020-03-", 1:31))
 img <- image_graph(1200, 700, res = 96)
 out <- lapply(d, function(date){

@@ -1,0 +1,88 @@
+---
+title: "Lecture Notes Part C"
+author: "Alisa Ishikawa"
+date: "January 5, 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction to Plot() Function
+
+Plot function in R programming language is a basic function. It can be used to visualize data in 2D format by creating graphs and charts and visualize correlation among data variables. Common graphs used in this function include scatter plots and line graphs.
+
+The generic syntax for the Plot function is:
+
+> Plot(x,y…)
+
+And a more complex function is:
+
+> plot(x, y, type, main, sub,  xlab, ylab)
+
+Where…
+
+“**p**”: points  
+“**l**”: lines   
+“**b**”: both point and lines in a single place  
+“**c**”: join empty point by the lines  
+“**o**”: both lines and over-plotted point  
+“**h**”: histogram 
+“**s**”: stair steps  
+“**n**”: no plotting  
+  
+“**xlab**”: x-axis legends  
+“**ylab**”: y-axis legends
+
+## Example Exercise
+  
+We have 10 students in two different courses and their grades for their recent exam.  
+The X variable denotes the first course and the Y variable denotes the second course.  
+<br/>
+> X = 40, 15, 50, 12, 22, 29, 21, 35, 14, 15  
+Y = 41, 42, 32, 14, 42, 27, 13, 50, 33, 22
+
+Put them into the correct syntax and create a line plot using type “l”  
+<br/>
+First, define X in a vector and then use the assigned variable and declare a lines plot using the plot function.
+
+```{r plot, echo = TRUE, out.width="80%"}
+X = c(40, 15, 50, 12, 22, 29, 21, 35, 14, 15)
+plot(X ,type = "l")
+```  
+
+Next, define Y in a vector and then use the assigned variable and declare a points plot using the plot function.
+
+```{r plot2, echo = TRUE, out.width="80%"}
+Y = c(41, 42, 32, 14, 42, 27, 13, 50, 33, 22)
+plot(Y ,type = "p")
+```  
+
+There are a plethora of ways to use the basic plot() function to your advatage.  
+Below are a representation of other visualization capabilities within the default plot function.  
+<br/>
+![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/plot function other examples.png){width=100%}  
+
+## Alternative Visualization Packages
+
+- ggplots
+- maps
+- magick  
+
+### ggplots
+
+It is a plotting package that makes it simple to create complex plots from data in a data frame.  
+It provides a more programmatic interface for specifying what variables to plot, how they are   
+displayed, and general visual properties. Therefore, we only need minimal changes if the  
+underlying data change or if we decide to change from a bar plot to a scatterplot.  
+This helps in creating publication quality plots with minimal amounts of adjustments and tweaking.  
+<NEED CITATION: https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html>  
+<br/>
+![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot other 1.png){width=65%}  
+![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot other 2.png){width=65%}  
+![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot other 3.png){width=50%}
+
+
+### maps
+

@@ -2,8 +2,9 @@
 title: 'Part C: Visualizing COVID-19'
 author: "Alisa Ishikawa"
 date: "January 5, 2020"
-output: 
-    slidy_presentation: default
+output:
+  beamer_presentation: default
+  slidy_presentation: default
 ---
 
 ```{r setup, include=FALSE}
@@ -140,7 +141,7 @@ install.packages("maps")
 ```  
 ![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/Static Map 21.12.png){width=100%}
 
-## Bonus: Visualize a moving map with magick()
+## Visualize a moving map with magick()
 
 ```r{}
 install.packages("magick")  

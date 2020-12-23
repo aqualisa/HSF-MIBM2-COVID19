@@ -46,7 +46,6 @@ ggplot(filter(d, country %in% n$country, d$time > '2020-02-01'),
 
 # worldwide growth on a map
 # create a global map using the data
-install.packages("maps")
 require(nCov2019)
 require(dplyr)
 x <- get_nCov2019()

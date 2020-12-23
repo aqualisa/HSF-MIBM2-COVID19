@@ -193,3 +193,5 @@ Kumar, P., 2020. Understanding Plot() Function In R. [online] JournalDev. Availa
 Pedersen, T., 2020. Ggplot2 Package. [online] Rdocumentation.org. Available at: <https://www.rdocumentation.org/packages/ggplot2/versions/3.3.2>.  
 <br/>
 EDUCBA. 2020. Plot Function In R. [online] Available at: <https://www.educba.com/plot-function-in-r/>.  
+<br/>
+Qian, X., 2020. Visualize The Pandemic With R #COVID-19. [online] Medium. Available at: <https://towardsdatascience.com/visualize-the-pandemic-with-r-covid-19-c3443de3b4e4>.

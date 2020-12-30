@@ -9,6 +9,17 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## Exploring Visualization capabilities of R  
+
+R is equipped with multiple and extensive visualization capabilities.  
+The following sections will explore the capabilities of the following:
+
+- plot()
+- ggplot()
+- magick()  
+<br/>
+Visualization of data comes in very handy especially when we are dealing with a LOT of data, when data changes on a periodic basis and most importantly in understanding the correlation or analyzing data as well.
+
 ## Introduction to Plot() Function
 
 Plot function in R programming language is a basic function. It can be used to visualize data in 2D format by creating graphs and charts and visualize correlation among data variables. Common graphs used in this function include scatter plots and line graphs.
@@ -21,7 +32,7 @@ And a more complex function is:
 
 > plot(x, y, type, main, sub,  xlab, ylab)
 
-Where…
+Where you can assign the *type* of plot you want to see by:
 
 “**p**”: points  
 “**l**”: lines   
@@ -39,9 +50,9 @@ Where…
   
 We have 10 students in two different courses and their grades for their recent exam.  
 The X variable denotes the first course and the Y variable denotes the second course.  
-<br/>
+  
 > X = 40, 15, 50, 12, 22, 29, 21, 35, 14, 15  
-Y = 41, 42, 32, 14, 42, 27, 13, 50, 33, 22
+> Y = 41, 42, 32, 14, 42, 27, 13, 50, 33, 22
 
 Put them into the correct syntax and create a line plot using type “l”  
 <br/>
@@ -63,26 +74,202 @@ There are a plethora of ways to use the basic plot() function to your advatage.
 Below are a representation of other visualization capabilities within the default plot function.  
 <br/>
 ![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/plot function other examples.png){width=100%}  
+<font size="2">Source: Kumar, 2020</font>
 
-## Alternative Visualization Packages
 
-- ggplots
-- maps
-- magick  
+## Case Study 1 - using plot()
 
-### ggplots
+### Exploring Visualization of R package developed by Dr. Guangchuang Yu from Southern Medical University
 
-It is a plotting package that makes it simple to create complex plots from data in a data frame.  
-It provides a more programmatic interface for specifying what variables to plot, how they are   
-displayed, and general visual properties. Therefore, we only need minimal changes if the  
-underlying data change or if we decide to change from a bar plot to a scatterplot.  
-This helps in creating publication quality plots with minimal amounts of adjustments and tweaking.  
-<NEED CITATION: https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html>  
+This package allows us to access the latest data and historical data of cases of all countries, plot data on a map, and create various graphs.  
 <br/>
+We can configure his data by first installing his package via Github.  
+<br/>
+Package: nCov2019  
+By: Dr. Guangchuang Yu (Southern Medical University)  
+
+```r{}
+remotes::install_github("GuangchuangYu/nCov2019")  
+
+library(nCov2019)
+get_nCov2019()
+load_nCov2019()
+```
+Then we check that the packages necessary for visualization are installed properly.
+```r{}
+require(nCov2019)
+require(dplyr)
+```
+  
+Now we can get a first impression of the dataset.  
+<br/>
+The get() function searches and calls a data object and the load() function makes sure all of the R objects saved in the file are loaded into R.  
+<br/>
+By assigning x to the function below, it triggers download of statistical data of COVID-19.  
+By assigning y to the function below, it triggers to load historical data of COVID-19.  
+
+```r{}
+x <- get_nCov2019()
+y <- load_nCov2019()
+```
+
+We can then check the results for x and y accordingly. X informs us the total number of cases in China and Y informs us when the data was last updated.  
+```r{}
+x
+  
+China (total confirmed cases): 95901
+last update: 2020-12-21 20:45:32
+```
+```r{}
+y
+  
+nCov2019 historical data 
+last update: 2020-11-26 
+```
+  
+We can also check worldwide statistics easily for details on confirmed cases, deaths, etc.  
+This function automatically sorts the entire data set by number of confirmed cases.  
+
+```r{}
+x['global']
+```
+```
+    name           confirm   suspect dead    deadRate  showRate  heal
+1   China          95901      7      4771    4.97      FALSE     89480
+2   United States  18277433   0      324898  1.78      FALSE     10622096
+3   India          10055560   0      145810  1.45      FALSE     9606111
+4   Brazil         7238600    0      186764  2.58      FALSE     6409986
+5   Russia         2850042    0      50723   1.78      FALSE     2273510
+6   France         2529756    0      60665   2.4       FALSE     189638
+7   United Kingdom 2079564    0      67718   3.26      FALSE     4380
+8   Turkey         2043704    0      18351   0.9       FALSE     1834705
+9   Italy          1964054    0      69214   3.52      FALSE     1281258
+10  Spain          1817448    0      48926   2.69      FALSE     196958
+11  Argentina      1541285    0      41813   2.71      FALSE     1368346
+12  Germany         1531998   0      26655   1.74      FALSE     1129280
+```
+
+### A Static heat map using plot()
+
+The plot() function is very versatile and includes the capability to visualize data on a map.  
+Since we already assigned x to a function, we can plot them in the plot() function below to get a static heat map.
+
+```r{}
+plot(x)
+```
+![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/Static Map 21.12.png){width=100%}
+
+
+## Introduction to ggplots()
+
+Unlike the Plot function that exists by default on the R platform, you can download the ggplots2 package which will allow you to declaratively create visualization of data by providing ggplot2 with the information on how you want to map variables to aesthetics.  
+<br/>
+ggplot is a package that makes it simple to create complex plots from data in a data frame.  
+It provides a more programmatic interface for specifying what variables to plot, how they are displayed, and general visual properties. Therefore, we only need minimal changes if the underlying data change or if we decide to change from a bar plot to a scatterplot.  
+This helps in creating publication quality plots with minimal amounts of adjustments and tweaking.  
+<br/>
+Below are some examples of the capabilities of ggplot. In contrast to plot(), it is evident that the aesthetic and programmability capabilities are much more advanced.  
+
 ![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot other 1.png){width=65%}  
 ![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot other 2.png){width=65%}  
 ![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot other 3.png){width=50%}
 
+<font size="2">Source: Holtz, 2020</font>
 
-### maps
+## Case Study 2 - using ggplot()
 
+Based on the same data as *Case Study 1*, it is possible to extract the top 10 countries with confirmed cases and plot them on a ggplot.  
+```r{}
+# obtain top 10 country
+d <- y['global'] #extract global data
+d <- d[d$country != 'China',] #exclude China
+n <- d %>% filter(time == time(y)) %>%
+  top_n(10, cum_confirm) %>%
+  arrange(desc(cum_confirm))
+
+# plot top 10 on a graph since Feb 01 to most recent date in dataset
+require(ggplot2)
+require(ggrepel)
+ggplot(filter(d, country %in% n$country, d$time > '2020-02-01'),
+      aes(time, cum_confirm, color=country)) +
+      geom_line() +
+      geom_text_repel(aes(label=country),
+      function(d) d[d$time == time(y),])
+```
+
+This results in a colorful, easy-to-see line graph like below.  
+<br/>
+This graph shows the top 10 countries with the most confirmed cases outside of China. The United States and India are the most infected countries and show exponential growth. Meanwhile, the 7 other countries under Brazil have flattened their curve and slowed down the growth with an effective containment strategy. Some other European countries such as France and Italy are also seeing hundreds and thousands of new cases.  
+
+![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/Top 10 graph.png){width=80%}
+  
+### A gauge plot - Incubation Time
+
+Below is a *gauge* type plot on ggplot(). 
+
+![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot - gauge.png){width=80%}  
+<font size="2">Source: Kanevsky, 2020</font>
+  
+### A bar chart - Spectrum of Illness Severity
+
+![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot - bar.png){width=80%}  
+<font size="2">Source: Kanevsky, 2020</font>
+  
+### A bar chart - Clinical Manifestations
+
+![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot - bar2.png){width=80%}  
+<font size="2">Source: Kanevsky, 2020</font>
+  
+### A bar & line chart - Case Fatality Rate (CFR) by Age Groups
+
+![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot - bar and line.png){width=80%}  
+<font size="2">Source: Kanevsky, 2020</font>
+  
+### A bar chart with timeline - Period of Infectivity
+
+![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot - bar resembling timeline.png){width=80%}  
+<font size="2">Source: Kanevsky, 2020</font>
+
+## Animated growth of confirmed cases
+
+Rather than a static map, maps can also be visualized overtime in dynamic form through a Magick R Package.  
+<br/>
+Using the same variables set previously, it is possible to create a moving heat map.  
+The below moving heatmap is the development of COVID-19 from February 1st, 2020 to March 31st, 2020.  
+It is possible to see that the virus originated in China and spread across the world.  
+
+```r{}
+install.packages("magick")  
+
+library(magick)
+require(nCov2019)
+x <- get_nCov2019()
+y <- load_nCov2019()
+
+y <- load_nCov2019()
+d <- c(paste0("2020-02-", 1:29), paste0("2020-03-", 1:31))
+img <- image_graph(1200, 700, res = 96)
+out <- lapply(d, function(date){
+  p <- plot(y, date=date,
+            label=FALSE, continuous_scale = TRUE)
+            print(p)
+})
+dev.off()
+animation <- image_animate(img, fps=2)
+print(animation)
+```  
+![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/moving map.gif){width=100%}
+
+## List of References {.smaller}
+
+Holtz, Y., 2020. Data Visualization With R And Ggplot2. [online] R-graph-gallery.com. Available at: <https://www.r-graph-gallery.com/ggplot2-package.html>.  
+<br/>
+Kanevsky, G., 2020. Facts About Coronavirus Disease 2019 (COVID-19) In 5 Charts Created With R And Ggplot2. [online] Novyden.blogspot.com. Available at: <https://novyden.blogspot.com/2020/03/facts-about-coronavirus-disease-2019.html>.  
+<br/>
+Kumar, P., 2020. Understanding Plot() Function In R. [online] JournalDev. Available at: <https://www.journaldev.com/36083/plot-function-in-r>.  
+<br/>
+Pedersen, T., 2020. Ggplot2 Package. [online] Rdocumentation.org. Available at: <https://www.rdocumentation.org/packages/ggplot2/versions/3.3.2>.  
+<br/>
+EDUCBA. 2020. Plot Function In R. [online] Available at: <https://www.educba.com/plot-function-in-r/>.  
+<br/>
+Qian, X., 2020. Visualize The Pandemic With R #COVID-19. [online] Medium. Available at: <https://towardsdatascience.com/visualize-the-pandemic-with-r-covid-19-c3443de3b4e4>.

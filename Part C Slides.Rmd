@@ -1,5 +1,5 @@
 ---
-title: 'Part C: Visualizing COVID-19'
+title: 'Part C: Visualizing COVID-19 with R'
 author: "Alisa Ishikawa"
 date: "January 5, 2020"
 output:
@@ -10,8 +10,7 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
-# How can we use R to visualize COVID-19?
-  
+
 ## Exploring Visualization capabilities of R
 
 - plot()
@@ -71,23 +70,6 @@ plot(Y ,type = "p")
 ![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/plot function other examples.png){width=100%}  
 <font size="2">Source: Kumar, 2020</font>
 
-## ggplot2() Package
-
-```r{}
-install.packages("ggplot2")
-```
-- Powerful package to draw graphics
-- 'gg' stands for Grammar of Graphics
-- Works with dataframes and not individual vectors (unlike base graphics)
-  
-## ggplot() Function Capabilities
-![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot other 1.png){width=65%}  
-![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot other 2.png){width=65%}  
-![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot other 3.png){width=50%}  
-<font size="2">Source: Holtz, 2020</font>
-  
-# Visualizing with Plot()
-  
 ## Data source for Case Study
 
 Package: nCov2019  
@@ -144,9 +126,22 @@ x['global']
 
 ![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/Static Map 21.12.png){width=100%}
   
-# Visualizing with ggplot()
+## ggplot2() Package
+
+```r{}
+install.packages("ggplot2")
+```
+- Powerful package to draw graphics
+- 'gg' stands for Grammar of Graphics
+- Works with dataframes and not individual vectors (unlike base graphics)
   
-## A colorful line graph = Top 10 Countries
+## ggplot() Function Capabilities
+![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot other 1.png){width=65%}  
+![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot other 2.png){width=65%}  
+![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot other 3.png){width=50%}  
+<font size="2">Source: Holtz, 2020</font>
+
+## A colorful line graph - Top 10 Countries
 
 ![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/Top 10 graph.png){width=80%}
   

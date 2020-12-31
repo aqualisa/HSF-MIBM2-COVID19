@@ -1,5 +1,5 @@
 ---
-title: "Lecture Notes Part C"
+title: "3 How to support policy making with visualizations of COVID-19 data"
 author: "Alisa Ishikawa"
 date: "January 5, 2020"
 output: html_document
@@ -8,6 +8,8 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+# 3.1 Overview of plot() and ggplot()
 
 ## Exploring Visualization capabilities of R  
 
@@ -76,6 +78,7 @@ Below are a representation of other visualization capabilities within the defaul
 ![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/plot function other examples.png){width=100%}  
 <font size="2">Source: Kumar, 2020</font>
 
+# 3.2 Case Study 1: Visualization capabilities using plot()
 
 ## Case Study 1 - using plot()
 
@@ -159,6 +162,7 @@ plot(x)
 ```
 ![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/Static Map 21.12.png){width=100%}
 
+# 3.3 Case Study 2: Visualization capabilities using ggplot()
 
 ## Introduction to ggplots()
 

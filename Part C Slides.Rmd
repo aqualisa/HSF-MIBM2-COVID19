@@ -1,5 +1,5 @@
 ---
-title: 'Part C: Visualizing COVID-19 with R'
+title: '3 How to support policy making with visualizations of COVID-19 data'
 author: "Alisa Ishikawa"
 date: "January 5, 2020"
 output:
@@ -179,6 +179,8 @@ install.packages("magick")
 
 ## References {.smaller}
 
+EDUCBA. 2020. Plot Function In R. [online] Available at: <https://www.educba.com/plot-function-in-r/>.  
+<br/>
 Holtz, Y., 2020. Data Visualization With R And Ggplot2. [online] R-graph-gallery.com. Available at: <https://www.r-graph-gallery.com/ggplot2-package.html>.  
 <br/>
 Kanevsky, G., 2020. Facts About Coronavirus Disease 2019 (COVID-19) In 5 Charts Created With R And Ggplot2. [online] Novyden.blogspot.com. Available at: <https://novyden.blogspot.com/2020/03/facts-about-coronavirus-disease-2019.html>.  
@@ -186,7 +188,5 @@ Kanevsky, G., 2020. Facts About Coronavirus Disease 2019 (COVID-19) In 5 Charts 
 Kumar, P., 2020. Understanding Plot() Function In R. [online] JournalDev. Available at: <https://www.journaldev.com/36083/plot-function-in-r>.  
 <br/>
 Pedersen, T., 2020. Ggplot2 Package. [online] Rdocumentation.org. Available at: <https://www.rdocumentation.org/packages/ggplot2/versions/3.3.2>.  
-<br/>
-EDUCBA. 2020. Plot Function In R. [online] Available at: <https://www.educba.com/plot-function-in-r/>.  
 <br/>
 Qian, X., 2020. Visualize The Pandemic With R #COVID-19. [online] Medium. Available at: <https://towardsdatascience.com/visualize-the-pandemic-with-r-covid-19-c3443de3b4e4>.

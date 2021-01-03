@@ -1,7 +1,7 @@
 ---
 title: "3 How to support policy making with visualizations of COVID-19 data"
 author: "Alisa Ishikawa"
-date: "January 5, 2020"
+date: "05/01/2020"
 output: html_document
 ---
 
@@ -209,27 +209,56 @@ This graph shows the top 10 countries with the most confirmed cases outside of C
   
 ### A gauge plot - Incubation Time
 
-Below is a *gauge* type plot on ggplot(). 
+Below is a *gauge* type plot on ggplot(.  
+<br/>
+Often times quartiles and extreme percentiles of continuous distribution are displayed with box plots. However, with insufficient information and box plots being a very 'statistical' diagram, gauge plots are much easier to understand and are often used as common dashboard applications.  
+<br/>
+Utilizing the 181 publicly reported confirmed cases in China, one modeling study estimated that symptoms of COVID-19 would develop in 2.5% of the infected within 2.2 days and in 97.5% of the infected within 11.5 days. The maximum of the infected shows within 14 days, which explains why the quarantine periods required in many countries are between 10 to 14 days.  
 
 ![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot - gauge.png){width=80%}  
 <font size="2">Source: Kanevsky, 2020</font>
   
-### A bar chart - Spectrum of Illness Severity
+### A bar chart - Spectrum of Illness Severity  
+
+The spectrum of illness severity ranges from mild to critical and most infections are not severe. In analyzing a study involving 44,500 confirmed cases conducted by the Chinese Center for Disease Control and Prevention, the estimation of the infection severity was reported as the following:
+- 81% mild (no or mild pneumonia)  
+- 14% severe (with dyspnea (shortness of breath), hypoxia, or >50 percent lung involvement on imaging within 24-28hrs)  
+- 5% critical (respiratory failure, shock of multi-organ dysfunction)  
+- 2.3% Case Fatality Rate (CFR)  
+<br/>
+There were no deaths reported in non-critical cases.  
 
 ![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot - bar.png){width=80%}  
 <font size="2">Source: Kanevsky, 2020</font>
   
-### A bar chart - Clinical Manifestations
+### A bar chart - Clinical Manifestations  
+
+The most frequent manifestation of infection is 'pneumonia', which can be characterized by symptoms such as fever, cough, dyspnea (shortness of breath), and bilateral infiltrates on chest imaging. An analysis of 138 pneumonia patients in Wuhan, China resulted in the most common clinical features at the onsent of illness as:
+- Fever 99%
+- Fatigue 70%
+- Dry cough 59%
+- Anorexia 40%
+- Myalgias (muscle aches) 35%
+- Dyspnea (shortness of breath) 31%
+- Sputum production (coughing up and spitting out the material produced in the respiratory tract) 27%  
 
 ![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot - bar2.png){width=80%}  
 <font size="2">Source: Kanevsky, 2020</font>
   
-### A bar & line chart - Case Fatality Rate (CFR) by Age Groups
+### A bar & line chart - Case Fatality Rate (CFR) by Age Groups  
+
+The Case Fatality Rate (CFR) ranged from 5.8% in Wuhan to 0.7% across the rest of China. Most of the fatal incidents were among those of old age or preexisting conditions. The proportion of severe or fatal infections may vary by location. For example in Italy, 12% of all COVID-19 infected persons and 16% of all hospitalized patients were admitted to the ICU and in mid-March their estimated CFR was 7.2%. The median age of patients with infections in Italy were 64 years old. In comparison the CFR rate in South Korea in mid-March was 0.9% and the median age was in the 40s.   
 
 ![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot - bar and line.png){width=80%}  
 <font size="2">Source: Kanevsky, 2020</font>
   
-### A bar chart with timeline - Period of Infectivity
+### A bar chart with timeline - Period of Infectivity  
+
+The exact interval in which a COVID-19 patient is infectious is uncertain. Many data that backs the interval of infection are studies based on viral RNA detection from respiratory and other specimens however, detection of viral RNA does not necessarily mean that the virus is present.  
+<br/>
+Based on a series of studies, it can be assumed that viral RNA levels appear higher in the onset of the infection rather than later. Therefore, it can be assumed that the possiblity of transmitting the infection may be more likely in the earlier stage than the later stages.  
+<br/>
+The duration of viral shedding also varies and it appears that there is a wide range of possibilities depending on the severity of the illness. In one study, 90% of 21 patients with mild illness repeatedly showed negative viral RNA tests on nasal swabs 10 days after the onset of symptoms and positive tests were longer in patients with more severe illnesses. In another study, 137 patients who had recovered from COVID-19 showed the median duration of viral shedding to be 20 days.  
 
 ![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/ggplot - bar resembling timeline.png){width=80%}  
 <font size="2">Source: Kanevsky, 2020</font>

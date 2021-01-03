@@ -1,7 +1,7 @@
 ---
 title: '3 How to support policy making with visualizations of COVID-19 data'
 author: "Alisa Ishikawa"
-date: "January 5, 2020"
+date: "05/01/2020"
 output:
   ioslides_presentation: default
   slidy_presentation: default

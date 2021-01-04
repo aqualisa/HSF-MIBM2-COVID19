@@ -20,27 +20,26 @@ knitr::opts_chunk$set(echo = FALSE)
 ## Plot() Function {.smaller}
 
 - Basic function in R
-- 2D format
-  
-<br/>
-Generic syntax: **Plot(x,y...)**  
-<br/>
-A more advanced syntax is: **plot(x, y, type, main, sub,  xlab, ylab)**
+- 2D format  
 
-where...  
-<br/>
-Type:  
+Generic syntax: **plot(x,y...)**  
+Advanced syntax: **plot(x, y, type, main, sub, xlab, ylab)**
+
+**main**: text for the main title  
+**sub**: text for the sub-title (under x-axis)
+  
+**type**:  
 “**p**”: points  
 “**l**”: lines   
 “**b**”: both point and lines in a single place  
 “**c**”: join empty point by the lines  
 “**o**”: both lines and over-plotted point  
-“**h**”: histogram 
-“**s**”: stair steps  
+“**h**”: histogram  
+“**s**”: stair steps    
 “**n**”: no plotting  
   
-“**xlab**”: x-axis legends  
-“**ylab**”: y-axis legends  
+**xlab**: x-axis legends  
+**ylab**: y-axis legends  
 
 ## Example Exercise Using Plot()
 
@@ -126,7 +125,7 @@ x['global']
 
 ![](/Users/alisaishikawa/Downloads/Data Science/HSF-MIBM2-COVID19/Images/Static Map 21.12.png){width=100%}
   
-## ggplot2() Package
+## ggplot2 Package
 
 ```r{}
 install.packages("ggplot2")

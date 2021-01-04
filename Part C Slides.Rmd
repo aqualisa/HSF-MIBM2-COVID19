@@ -1,5 +1,5 @@
 ---
-title: '3 How to support policy making with visualizations of COVID-19 data'
+title: 'How to support policy making with visualizations of COVID-19 data'
 author: "Alisa Ishikawa"
 date: "05/01/2020"
 output:

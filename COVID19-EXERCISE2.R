@@ -7,6 +7,8 @@
 remotes::install_github("GuangchuangYu/nCov2019")
 
 library(nCov2019)
+
+# get and load the data
 get_nCov2019()
 load_nCov2019()
 

@@ -20,8 +20,11 @@
 \usepackage{tabu,booktabs,color,pdfpages}
 \usepackage{setspace}
 
+\begin{document}
 \title{We Need It Now: \\
-How To Analyze COVID Data Quickly}\\
+How To Analyze COVID Data Quickly\\
+\vspace{3mm}
+\normalsize WS 20/21 Course Description}\\
 \author{Ahmed Hifaz \\
 	\small hifaz.ahmed@stud.hs-fresenius.de \\
 	\small +49 151 660 77919 \\
@@ -40,12 +43,11 @@ How To Analyze COVID Data Quickly}\\
 \date{HS Fresenius, Cologne Campus \\
         January 5, 2020 15:00-16:30}
 
-\begin{document}
-	\maketitle
+\maketitle
 	
 \begin{abstract}
 \noindent
-R is an open-source programming language that helps to analyze the spread and  consequences of viruses such as COVID-19. In particular, epidemiologists that seek to give policy advice employ R to combine data from different sources, to create various statistics, and to visualize the degree of the outbreak. This lecture will cover how epidemiologists utilize R as a tool in assessing viral outbreaks, how publicly available data can be structured and utilized in making analyses, and how to utilize visualization tools on R to create graphs to assist with conceptualizing, forecasting and understanding the characteristics of a virus and its degree of infectiousness. To visualize and analyze and the outbreak quickly is essential to guide political responses. The lecture also includes several real life case studies of COVID-19 to aid with the theoretical topics.
+R is an open-source programming language that aids in the analysis of the spread of viruses, such as COVID-19. Epidemiologists employ R to combine data from different sources and create various statistics and visualizations, in order to provide quick and accurate policy advice. This lecture will cover how epidemiologists take advantage of R as a tool in assessing viral outbreaks, how publicly available data can be structured to produce analyses, and how to visualize the data set to acknowledge the characteristics of the virus and its degree of infectiousness. The lecture will also cover five COVID-19 case studies to aid with the implementation of theoretical topics.
 \end{abstract}
 \subsection*{Learning Objectives}
 	After this course you should be able to:\label{book}
@@ -57,35 +59,55 @@ R is an open-source programming language that helps to analyze the spread and  c
 \end{itemize}
 \subsection*{Course Outline}
 \begin{spacing}{1.0}
-\subsubsection*{1 Why R is a significant tool of choice for epidemiologists}
-    1.1 Data analytics and Epidemiology \\
-    1.2 Role of 'r' number's in COVID-19 data collection \\
-    1.3 What is RECON and what do they do? \\
+\subsubsection*{1 Why R is a Significant Tool of Choice for Epidemiologists}
+    1.1 Data Analytics and Epidemiology \\
+    1.2 Role of 'r' Number in COVID-19 Data Collection \\
+    1.3 Introducing RECON and RECON Learn Package \\
     1.4 Web Scraping and Data Coalition \\
-    1.5 Case Study: Saxony, Germany
-\subsubsection*{2 How we can acquire COVID-19 data, just like epidemiologists}
+    1.5 Case Study: Saxony - Germany's 'Haunted State'
+\subsubsection*{2 How We Can Acquire COVID-19 Data, Just Like Epidemiologists}
     2.1 Case Study 1: Taiwan’s Proactive Control of COVID-19 \\
     2.2 Case Study 2: Diamond Princess Cruise Ship \\
     2.3 Comparing Publicly Available Data: JHU and Wikipedia \\
-    2.4 Strengths of R as a statistical application for forecasting/predictions
-    \subsubsection*{3 How to support policy making with visualizations of COVID-19 data}
-    3.1 Overview of plot() and ggplot() \\
-    3.2 Case Study 1: Visualization capabilities using plot() \\
-    3.3 Case Study 2: Visualization capabilities using ggplot()
+    2.4 Strengths of R as a Statistical Application for Forecasting & Predictions
+    \subsubsection*{3 How to Support Policy Making with Visualizations of COVID-19 data}
+    3.1 Overview of Plot() and Ggplot() \\
+    3.2 Case Study 1: Visualization Capabilities using Plot() \\
+    3.3 Case Study 2: Visualization Capabilities using Ggplot()
 \end{spacing}
-\noindent 
+\vspace{0mm}
+\renewcommand{\refname{---------------------------------------------------------------}}
+\begin{thebibliography}{5}
 \subsection*{Recommended Readings}
+\bibitem{Aragon2020} Aragón, T. (2020). Population Health Data Science With R. Retrieved from \url{https://bookdown.org/medepi/phds/getting-started-with-r.html} (31.12.2020).
 
-Ponce, M., & Sandhel, A. (2020). covid19.analytics: An R Package to Obtain, \indent Analyze and Visualize Data from the Corona Virus Disease Pandemic, 1–47. \indent Retrieved from https://arxiv.org/pdf/2009.01091.pdf
+\bibitem{Chongsuvivatwong and Mcneil 2012} Chongsuvivatwong, v., and McNeil, E. (2012). \textit{Analysis Of Epidemiological Data Using R And Epicalc}. Thailand: Prince of Songkla University.
 
-\noindent
+\bibitem{Ponce and Sandhel 2020} Ponce, M., and Sandhel, A. (2020). covid19.analytics: An R Package to Obtain, Analyze and Visualize Data from the Corona Virus Disease Pandemic, Retrieved from \url{https://arxiv.org/pdf/2009.01091.pdf} (28.12.2020).
+ \\
+
 \subsection*{Literature}
-xxx
+\bibitem{Chang 2013} Chang, W. (2013). \textit{R Graphics Cookbook: Practical Recipes for Visualizing Data}. O’Reilly.
 
-\subsection*{Resources for lecture notes, in-class slides and exercises}
-Ishikawa, A., 2020. \textit{Aqualisa/HSF-MIBM2-COVID19}. [online] GitHub.  \\
-\indent Available at: <https://github.com/aqualisa/HSF-MIBM2-COVID1  \\
-\indent 9>.  \\
-\noindent
+\bibitem{Grolemund and Wicklam} Grolemund, G. and Wickham, H. (2018). \textit{R for Data Science: Import, Tidy, Transform, Visualize, and Model Data}. O’Reilly.
 
+\bibitem{Wickham 2020} Wickham, H. (2010).\textit{ggplot2: Elegant Graphics for Data Analysis}. Springer.
+ \\
+
+\subsection*{In-Class Resources}
+\bibitem{Part 2 Lecture Notes} Bhambhani, P. (2020).  \textit{Part 2 Lecture Notes}. Retrieved from \url{https://rawcdn.githack.com/PirneetaRB/Part-2-Lecture-Notes-Pirneeta-RB--Mr.-Stephan-Huber/3755a55cf4ac8015653526f7eb81329c998d8c74/Part-2-Lecture-Notes-by-Pirneeta-R.-Bhambhani.html}.
+
+\bibitem{Part 2 Lecture Slides} Bhambhani, P. (2020). \textit{Part 2 Lecture Slides}. Retrieved from \url{https://rawcdn.githack.com/PirneetaRB/05-01-2021-Data-Science-Final-Presentation-PIRNEETA-RB-AHMED-HIFAZ-ALISA-ISHIKAWA/2d8f09d596be4301c6672a7df4d4c5dcdec2441d/3pirneetacoviddatascienceproject--1-.html#1}.
+
+\bibitem{Part 1 Lecture Notes} Hifaz, A. (2020). \textit{Part 1 Lecture Notes}. Retrieved from \url{https://rawcdn.githack.com/ahmedhifaz97/Part-1/5952e4f8a666570b72fff2c1b2810e878dd10a3b/sdsds.html?fbclid=IwAR1BJZp9ZzJMzq7MF3bIq6YGYRUnITrgGfffKoW-eJ88wuFoL3a1CUZmmWU}.
+
+\bibitem{Part 1 Lecture Slides} Hifaz, A. (2020). \textit{Part 1 Lecture Slides}.  Retrieved from  \url{https://rawcdn.githack.com/ahmedhifaz97/Part-A/6d0bbdd6ed75aa692253facb5d79b96938ee27e9/Part-A--Hifaz.html#1}.
+
+\bibitem{Part 3 Exercises} Ishikawa, A. (2020). \textit{Part 3 Exercises}. Retrieved from \url{https://github.com/aqualisa/HSF-MIBM2-COVID19/blob/main/COVID19-EXERCISE2.R}.
+
+\bibitem{Part 3 Lecture Notes} Ishikawa, A. (2020).  \textit{Part 3 Lecture Notes}. Retrieved from \url{https://rawcdn.githack.com/aqualisa/HSF-MIBM2-COVID19/e4cf2e7d1c4330644b05dda17551e27d509c2f3a/Part-C-Lecture-Notes.html}.
+
+\bibitem{Part 3 Lecture Slides} Ishikawa, A. (2020). \textit{Part 3 Lecture Slides}. Retrieved from \url{https://rawcdn.githack.com/aqualisa/HSF-MIBM2-COVID19/f4779759df810ccf40c8e021e7c4d88614b9e2d3/Part-C-Slides.html#1}.
+
+\end{thebibliography}
 \end{document}
